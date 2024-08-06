@@ -1,1 +1,6 @@
-# Log-File-Management
+# Log File Management
+This PowerShell script is designed for log file management, specifically archiving and deleting log files older than a specified number of days. The script begins by setting parameters such as the directories for logs and archived logs, the age threshold for archiving files, the compression format, and the log file path. It defines a Log-Message function to log informational and error messages with timestamps.
+
+The script calculates the cutoff date based on the current date minus the specified number of days. It ensures the archive directory exists, creating it if necessary, and logs the action. It then retrieves log files from the log directory that are older than the cutoff date, logging the count of such files.
+
+For each old log file, the script compresses the file into a zip archive in the archive directory, logs the compression action, and then deletes the original file, logging the deletion. If any step fails, the script logs an error message and continues with the next file. After processing all eligible files, it logs the completion of the log file management task. This script helps in maintaining a clean and organized log directory by archiving outdated logs and conserving disk space.
